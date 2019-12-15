@@ -1,0 +1,5 @@
+{
+  "description": "Delays opening PRs for new dependencies by 24 hours to avoid build failure in the case where a package version gets unpublished by its author (packages cannot be unpublished after 24 hours).",
+  "unpublishSafe": true,
+  "prCreation": "not-pending"
+}

@@ -1,0 +1,12 @@
+{
+  "description": "Groups minor dependency updates for non-condenast packages.",
+  "packageRules": [
+    {
+      "packagePatterns": ["*"],
+      "excludePackagePatterns": ["@condenast/*"],
+      "minor": {
+        "groupName": "{{arg0}}"
+      }
+    }
+  ]
+}

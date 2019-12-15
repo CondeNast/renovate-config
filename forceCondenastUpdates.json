@@ -1,0 +1,13 @@
+{
+  "description": "Ensure PRs for condenast packages as soon as possible after publish.",
+  "packageRules": [
+    {
+      "extends": ["github>CondeNast/renovate-config:orgPackages"],
+      "schedule": [],
+      "unpublishSafe": false,
+      "prCreation": "immediate",
+      "prHourlyLimit": 0,
+      "prConcurrentLimit": 0
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "description": "Disables automerge for testing frameworks. Upgrades to testing frameworks need to be validated manually to avoid false positive results.",
+  "packageRules": [
+    {
+      "extends": ["github>CondeNast/renovate-config:testFrameworks"],
+      "automerge": false,
+      "patch": {
+        "automerge": false
+      },
+      "minor": {
+        "automerge": false
+      },
+      "major": {
+        "automerge": false
+      }
+    }
+  ]
+}

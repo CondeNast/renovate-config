@@ -1,0 +1,4 @@
+{
+  "packageNames": ["nock"],
+  "packagePatterns": ["^cypress", "^jest"]
+}
