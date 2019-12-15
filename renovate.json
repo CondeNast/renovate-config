@@ -1,5 +1,6 @@
 {
   "extends": [
+    "config:base",
     "github>CondeNast/renovate-config:unpublishSafe",
     "github>CondeNast/renovate-config:forceCondenastUpdates",
     "github>CondeNast/renovate-config:automergeMinor",
