@@ -1,4 +1,4 @@
 {
-  "packageNames": ["nock"],
+  "packageNames": ["nock", "nyc"],
   "packagePatterns": ["^cypress", "^jest"]
 }
