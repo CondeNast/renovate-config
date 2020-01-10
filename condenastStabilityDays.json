@@ -1,0 +1,9 @@
+{
+  "description": "If automerging is enabled, PRs for condenast packages will be created immediately but automerging will be delayed until 24 hours have passed. This allows for manual intervention if there is a problem with a release.",
+  "packageRules": [
+    {
+      "extends": ["github>CondeNast/renovate-config:orgPackages"],
+      "stabilityDays": 1
+    }
+  ]
+}
