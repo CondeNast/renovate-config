@@ -12,6 +12,21 @@
       },
       "major": {
         "automerge": false
+      },
+      "pin": {
+        "automerge": false
+      },
+      "digest": {
+        "automerge": false
+      },
+      "lockFileMaintenance": {
+        "automerge": false
+      },
+      "rollback": {
+        "automerge": false
+      },
+      "bump": {
+        "automerge": false
       }
     }
   ]

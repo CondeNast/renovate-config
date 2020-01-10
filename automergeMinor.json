@@ -1,20 +1,21 @@
 {
-  "description": "Enables automerge for minor and patch updates to non-condenast packages.",
+  "description": "Enables automerge for non-major updates.",
   "patch": {
     "automerge": true
   },
   "minor": {
     "automerge": true
   },
-  "packageRules": [
-    {
-      "extends": ["github>CondeNast/renovate-config:orgPackages"],
-      "patch": {
-        "automerge": false
-      },
-      "minor": {
-        "automerge": false
-      }
-    }
-  ]
+  "pin": {
+    "automerge": true
+  },
+  "digest": {
+    "automerge": true
+  },
+  "lockFileMaintenance": {
+    "automerge": true
+  },
+  "bump": {
+    "automerge": true
+  }
 }
