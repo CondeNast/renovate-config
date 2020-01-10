@@ -1,0 +1,24 @@
+{
+  "description": "Disables automerge for Node.js upgrades and also groups them together. This is helpful if you have multiple places where the Node.js version is set (e.g. multiple different Docker base images) and these don't always get release in sync with each other, so you have to wait for all of the new releases before you can merge them.",
+  "packageRules": [
+    {
+      "packageNames": ["node", "circleci/node", "cypress/browsers"],
+      "patch": {
+        "groupName": "Node.js",
+        "automerge": false
+      },
+      "minor": {
+        "groupName": "Node.js",
+        "automerge": false
+      },
+      "major": {
+        "groupName": "Node.js major version",
+        "automerge": false
+      },
+      "bump": {
+        "groupName": "Node.js",
+        "automerge": false
+      }
+    }
+  ]
+}
