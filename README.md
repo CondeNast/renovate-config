@@ -57,3 +57,5 @@ Package filters for automated test frameworks (e.g. `jest`, `nock`, `cypress`).
 ### `unpublishSafe`
 
 Delays opening PRs for new dependencies by 24 hours to avoid build failure in the case where a package version gets unpublished by its author (packages cannot be unpublished after 24 hours).
+
+NOTE: `unpublishSafe` doesn't work if you apply it do dependency groups, because the whole group will be on pause as long as one or more of the dependencies in the group was published in the last 24 hours. For this reason, `unpublishSafe` is not compatible with `groupMinorUpdates`.
