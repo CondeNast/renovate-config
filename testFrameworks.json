@@ -1,4 +1,4 @@
 {
   "packageNames": ["nock"],
-  "packagePatterns": ["^cypress", "^jest"]
+  "packagePatterns": ["^cypress", "^jest", "^@pollyjs"]
 }
