@@ -30,7 +30,7 @@ Enables automerge for non-major updates.
 
 If automerging is enabled, PRs for condenast packages will be created immediately but automerging will be delayed until 24 hours have passed. This allows for manual intervention if there is a problem with a release.
 
-### `dontAutomergeNode`
+### `dontAutomergeMajor`
 
 Disables automerge for major updates.
 
