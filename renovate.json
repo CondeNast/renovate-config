@@ -1,9 +1,11 @@
 {
   "extends": [
-    "github>CondeNast/renovate-config:unpublishSafe",
     "github>CondeNast/renovate-config:forceCondenastUpdates",
     "github>CondeNast/renovate-config:automergeMinor",
-    "github>CondeNast/renovate-config:dontAutomergeTestFrameworks",
+    "github>CondeNast/renovate-config:condenastStabilityDays",
+    "github>CondeNast/renovate-config:dontAutomergeMajor(help wanted)",
+    "github>CondeNast/renovate-config:dontAutomergeNode(help wanted)",
+    "github>CondeNast/renovate-config:dontAutomergeTestFrameworks(help wanted)",
     "github>CondeNast/renovate-config:groupMinorUpdates(dependencies)"
   ]
 }
