@@ -5,19 +5,23 @@
       "packageNames": ["node", "circleci/node", "cypress/browsers"],
       "patch": {
         "groupName": "Node.js",
-        "automerge": false
+        "automerge": false,
+        "labels": ["{{arg0}}"]
       },
       "minor": {
         "groupName": "Node.js",
-        "automerge": false
+        "automerge": false,
+        "labels": ["{{arg0}}"]
       },
       "major": {
         "groupName": "Node.js major version",
-        "automerge": false
+        "automerge": false,
+        "labels": ["{{arg0}}"]
       },
       "bump": {
         "groupName": "Node.js",
-        "automerge": false
+        "automerge": false,
+        "labels": ["{{arg0}}"]
       }
     }
   ]

@@ -9,12 +9,12 @@ renovate.json
 ```
 {
   "extends": [
-    "github>CondeNast/renovate-config:unpublishSafe",
     "github>CondeNast/renovate-config:forceCondenastUpdates",
     "github>CondeNast/renovate-config:automergeMinor",
     "github>CondeNast/renovate-config:condenastStabilityDays",
-    "github>CondeNast/renovate-config:dontAutomergeNode",
-    "github>CondeNast/renovate-config:dontAutomergeTestFrameworks",
+    "github>CondeNast/renovate-config:dontAutomergeMajor(help wanted)",
+    "github>CondeNast/renovate-config:dontAutomergeNode(help wanted)",
+    "github>CondeNast/renovate-config:dontAutomergeTestFrameworks(help wanted)",
     "github>CondeNast/renovate-config:groupMinorUpdates(dependencies)"
   ]
 }
@@ -29,6 +29,10 @@ Enables automerge for non-major updates.
 ### `condenastStabilityDays`
 
 If automerging is enabled, PRs for condenast packages will be created immediately but automerging will be delayed until 24 hours have passed. This allows for manual intervention if there is a problem with a release.
+
+### `dontAutomergeMajor`
+
+Disables automerge for major updates.
 
 ### `dontAutomergeNode`
 
