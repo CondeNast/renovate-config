@@ -1,0 +1,48 @@
+{
+  "description": "Disables automerge for CI pipeline dependencies.",
+  "packageRules": [
+    {
+      "managers": ["circleci"],
+      "patch": {
+        "groupName": "CI dependencies",
+        "automerge": false,
+        "labels": ["{{arg0}}"]
+      },
+      "minor": {
+        "groupName": "CI dependencies",
+        "automerge": false,
+        "labels": ["{{arg0}}"]
+      },
+      "major": {
+        "groupName": "CI dependencies major version",
+        "automerge": false,
+        "labels": ["{{arg0}}"]
+      },
+      "pin": {
+        "groupName": "CI dependencies",
+        "automerge": false,
+        "labels": ["{{arg0}}"]
+      },
+      "digest": {
+        "groupName": "CI dependencies",
+        "automerge": false,
+        "labels": ["{{arg0}}"]
+      },
+      "lockFileMaintenance": {
+        "groupName": "CI dependencies",
+        "automerge": false,
+        "labels": ["{{arg0}}"]
+      },
+      "rollback": {
+        "groupName": "CI dependencies",
+        "automerge": false,
+        "labels": ["{{arg0}}"]
+      },
+      "bump": {
+        "groupName": "CI dependencies",
+        "automerge": false,
+        "labels": ["{{arg0}}"]
+      }
+    }
+  ]
+}
