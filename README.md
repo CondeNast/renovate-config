@@ -9,13 +9,26 @@ renovate.json
 ```
 {
   "extends": [
+    "config:base",
+    "github>CondeNast/renovate-config:groupMinorUpdates(dependencies)"
     "github>CondeNast/renovate-config:forceCondenastUpdates",
     "github>CondeNast/renovate-config:automergeMinor",
     "github>CondeNast/renovate-config:condenastStabilityDays",
     "github>CondeNast/renovate-config:dontAutomergeMajor(help wanted)",
     "github>CondeNast/renovate-config:dontAutomergeNode(help wanted)",
     "github>CondeNast/renovate-config:dontAutomergeTestFrameworks(help wanted)",
-    "github>CondeNast/renovate-config:groupMinorUpdates(dependencies)"
+    "github>CondeNast/renovate-config:dontAutomergeCIDependencies(help wanted)",
+  ]
+}
+```
+
+Alternatively:
+
+```
+{
+  "extends": [
+    "config:base",
+    "github>CondeNast/renovate-config"
   ]
 }
 ```
@@ -41,6 +54,10 @@ Disables automerge for Node.js upgrades and also groups them together. This is h
 ### `dontAutomergeTestFrameworks`
 
 Disables automerge for testing frameworks. Upgrades to testing frameworks need to be validated manually to avoid false positive results.
+
+### `dontAutomergeCIDependencies`
+
+Disables automerge for CI pipeline dependencies. Upgrades to CI dependencies need to be validated manually to avoid false positive results. This also helps if you want to compile your CI configuration locally and keep the generated output in source control without Renovate automatically making changes to it.
 
 ### `forceCondenastUpdates`
 
