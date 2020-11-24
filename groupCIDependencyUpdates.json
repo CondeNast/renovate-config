@@ -1,0 +1,32 @@
+{
+  "description": "Groups all the CI pipeline dependency updates together.",
+  "packageRules": [
+    {
+      "managers": ["circleci"],
+      "patch": {
+        "groupName": "CI dependencies"
+      },
+      "minor": {
+        "groupName": "CI dependencies"
+      },
+      "major": {
+        "groupName": "CI dependencies major version"
+      },
+      "pin": {
+        "groupName": "CI dependencies"
+      },
+      "digest": {
+        "groupName": "CI dependencies"
+      },
+      "lockFileMaintenance": {
+        "groupName": "CI dependencies"
+      },
+      "rollback": {
+        "groupName": "CI dependencies"
+      },
+      "bump": {
+        "groupName": "CI dependencies"
+      }
+    }
+  ]
+}
