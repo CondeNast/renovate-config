@@ -3,6 +3,8 @@
   "packageRules": [
     {
       "extends": ["github>CondeNast/renovate-config:node"],
+      "stabilityDays": 3,
+      "prCreation": "not-pending"
       "groupName": "Node.js",
       "patch": {
         "groupName": "Node.js"
