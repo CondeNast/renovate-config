@@ -1,0 +1,21 @@
+{
+  "description": "Groups all the Node.js upgrades together. This is helpful if you have multiple places where the Node.js version is set (e.g. multiple different Docker base images) and these don't always get release in sync with each other, so you have to wait for all of the new releases before you can merge them.",
+  "packageRules": [
+    {
+      "extends": ["github>CondeNast/renovate-config:node"],
+      "groupName": "Node.js",
+      "patch": {
+        "groupName": "Node.js"
+      },
+      "minor": {
+        "groupName": "Node.js"
+      },
+      "major": {
+        "groupName": "Node.js major version"
+      },
+      "bump": {
+        "groupName": "Node.js"
+      }
+    }
+  ]
+}
