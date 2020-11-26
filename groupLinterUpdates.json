@@ -1,0 +1,12 @@
+{
+  "description": "Groups all the linter package upgrades together. This is helpful because linter package updates fail more often than most updates, and often depend on one another, so it is often useful to be able to deal with them in tandem.",
+  "packageRules": [
+    {
+      "extends": ["packages:eslint", "packages:stylelint"],
+      "packageNames": ["lint-staged", "prettier", "pretty-quick"],
+      "minor": {
+        "groupName": "linter packages"
+      }
+    }
+  ]
+}
