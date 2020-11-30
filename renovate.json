@@ -2,7 +2,6 @@
   "extends": [
     "config:base",
     "github>CondeNast/renovate-config:groupMinorUpdates(dependencies)",
-    "github>CondeNast/renovate-config:groupNodeUpdates",
-    "github>CondeNast/renovate-config:forceCondenastUpdates"
+    "github>CondeNast/renovate-config:groupNodeUpdates"
   ]
 }
