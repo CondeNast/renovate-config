@@ -2,6 +2,10 @@
   "extends": [
     "config:base",
     "github>CondeNast/renovate-config:groupMinorUpdates(dependencies)",
+    "github>CondeNast/renovate-config:groupCIDependencyUpdates",
+    "github>CondeNast/renovate-config:groupLinterUpdates",
     "github>CondeNast/renovate-config:groupNodeUpdates"
-  ]
+  ],
+  "dependencyDashboard": true,
+  "pinDigests": true
 }
