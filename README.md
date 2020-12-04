@@ -1,82 +1,86 @@
 # CondeNast/renovate-config
 
-This is a collection of [GitHub-hosted presets](https://docs.renovatebot.com/config-presets/#github-hosted-presets) for Renovate dependency bot.
+This is a collection of [GitHub-hosted presets](https://docs.renovatebot.com/config-presets/#github-hosted-presets) for Renovate dependency bot. 🤖
 
 ## Usage
 
-renovate.json
+In your `renovate.json`:
 
 ```
 {
   "extends": [
-    "config:base",
-    "github>CondeNast/renovate-config:groupMinorUpdates(dependencies)"
-    "github>CondeNast/renovate-config:forceCondenastUpdates",
+    "github>CondeNast/renovate-config",
+    "github>CondeNast/renovate-config:forceCondenastUpdates"
+  ]
+}
+```
+
+The `CondeNast/renovate-config` preset should go at the start of the `extends` array.
+
+The `CondeNast/renovate-config:forceCondenastUpdates` preset should go at the end of your `extends` array to ensure that PRs for Condé Nast package updates are created as soon as possible, to bypass any rate limiting and schedules.
+
+If you would like to [auto-merge](https://docs.renovatebot.com/configuration-options/#automerge) minor upgrades, here is a recommended configuration for doing that:
+
+```
+{
+  "extends": [
+    "github>CondeNast/renovate-config",
     "github>CondeNast/renovate-config:automergeMinor",
-    "github>CondeNast/renovate-config:condenastStabilityDays",
     "github>CondeNast/renovate-config:dontAutomergeMajor(help wanted)",
     "github>CondeNast/renovate-config:dontAutomergeNode(help wanted)",
     "github>CondeNast/renovate-config:dontAutomergeTestFrameworks(help wanted)",
     "github>CondeNast/renovate-config:dontAutomergeCIDependencies(help wanted)",
+    "github>CondeNast/renovate-config:condenastStabilityDays",
+    "github>CondeNast/renovate-config:forceCondenastUpdates"
   ]
 }
 ```
 
-Alternatively:
+You can also use any individual **semantic presets** without using the base preset. Here's a configuration that groups things but doesn't auto-merge them:
 
 ```
 {
   "extends": [
     "config:base",
-    "github>CondeNast/renovate-config"
+    "github>CondeNast/renovate-config:groupMinorUpdates(dependencies)",
+    "github>CondeNast/renovate-config:groupCIDependencyUpdates",
+    "github>CondeNast/renovate-config:groupLinterUpdates",
+    "github>CondeNast/renovate-config:groupNodeUpdates",
+    "github>CondeNast/renovate-config:forceCondenastUpdates"
   ]
 }
 ```
 
-## Presets
+## Semantic Presets
 
-### `automergeMinor`
+A description for each preset can be found in the JSON file for the preset stored in this repo.
 
-Enables automerge for non-major updates.
+### Condé Nast presets
 
-### `condenastStabilityDays`
+* [`github>CondeNast/renovate-config:forceCondenastUpdates`](./forceCondenastUpdates.json) - **NOTE: this preset should go at the end of the `extends` array.**
+* [`github>CondeNast/renovate-config:condenastStabilityDays`](./condenastStabilityDays.json)
 
-If automerging is enabled, PRs for condenast packages will be created immediately but automerging will be delayed until 24 hours have passed. This allows for manual intervention if there is a problem with a release.
+### PR Group presets
 
-### `dontAutomergeMajor`
+* [`github>CondeNast/renovate-config:groupMinorUpdates`](./groupMinorUpdates.json)
+* [`github>CondeNast/renovate-config:groupCIDependencyUpdates`](./groupCIDependencyUpdates.json)
+* [`github>CondeNast/renovate-config:groupLinterUpdates`](./groupLinterUpdates.json)
+* [`github>CondeNast/renovate-config:groupNodeUpdates`](./groupNodeUpdates.json)
 
-Disables automerge for major updates.
+### Auto-Merge presets
 
-### `dontAutomergeNode`
+* [`github>CondeNast/renovate-config:automergeMinor`](./automergeMinor.json)
+* [`github>CondeNast/renovate-config:dontAutomergeMajor`](./dontAutomergeMajor.json)
+* [`github>CondeNast/renovate-config:dontAutomergeNode`](./dontAutomergeNode.json)
+* [`github>CondeNast/renovate-config:dontAutomergeTestFrameworks`](./dontAutomergeTestFrameworks.json)
+* [`github>CondeNast/renovate-config:dontAutomergeCIDependencies`](./dontAutomergeCIDependencies.json)
+* [`github>CondeNast/renovate-config:unpublishSafe`](./unpublishSafe.json) - **NOTE: `unpublishSafe` doesn't work if you apply it to dependency groups, because the whole group will be on pause as long as one or more of the dependencies in the group was published in the last 24 hours. For this reason, `unpublishSafe` is not compatible with `groupMinorUpdates`.**
 
-Disables automerge for Node.js upgrades and also groups them together. This is helpful if you have multiple places where the Node.js version is set (e.g. multiple different Docker base images) and these don't always get release in sync with each other, so you have to wait for all of the new releases before you can merge them.
 
-### `dontAutomergeTestFrameworks`
+### Package Pattern presets
 
-Disables automerge for testing frameworks. Upgrades to testing frameworks need to be validated manually to avoid false positive results.
+These presets can be used to apply custom rules to a set of packages using [`packageRules`](https://docs.renovatebot.com/configuration-options/#packagerules).
 
-### `dontAutomergeCIDependencies`
-
-Disables automerge for CI pipeline dependencies. Upgrades to CI dependencies need to be validated manually to avoid false positive results. This also helps if you want to compile your CI configuration locally and keep the generated output in source control without Renovate automatically making changes to it.
-
-### `forceCondenastUpdates`
-
-Ensure PRs for condenast packages as soon as possible after publish.
-
-### `groupMinorUpdates`
-
-Groups minor dependency updates for non-condenast packages.
-
-### `orgPackages`
-
-Package filter for `@condenast` packages.
-
-### `testFrameworks`
-
-Package filters for automated test frameworks (e.g. `jest`, `nock`, `cypress`).
-
-### `unpublishSafe`
-
-Delays opening PRs for new dependencies by 24 hours to avoid build failure in the case where a package version gets unpublished by its author (packages cannot be unpublished after 24 hours).
-
-NOTE: `unpublishSafe` doesn't work if you apply it to dependency groups, because the whole group will be on pause as long as one or more of the dependencies in the group was published in the last 24 hours. For this reason, `unpublishSafe` is not compatible with `groupMinorUpdates`.
+* Node.js sources - [`github>CondeNast/renovate-config:node`](./node.json)
+* Condé Nast packages - [`github>CondeNast/renovate-config:orgPackages`](./orgPackages.json)
+* Testing frameworks - [`github>CondeNast/renovate-config:testFrameworks`](./testFrameworks.json)

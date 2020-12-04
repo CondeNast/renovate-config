@@ -3,6 +3,7 @@
   "packageRules": [
     {
       "managers": ["circleci"],
+      "groupName": "CI dependencies",
       "patch": {
         "groupName": "CI dependencies"
       },

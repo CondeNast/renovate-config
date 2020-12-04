@@ -4,37 +4,46 @@
     {
       "extends": ["github>CondeNast/renovate-config:testFrameworks"],
       "automerge": false,
+      "groupName": "test dependencies",
       "labels": ["{{arg0}}"],
       "patch": {
         "automerge": false,
+        "groupName": "test dependencies",
         "labels": ["{{arg0}}"]
       },
       "minor": {
         "automerge": false,
+        "groupName": "test dependencies",
         "labels": ["{{arg0}}"]
       },
       "major": {
         "automerge": false,
+        "groupName": "test dependencies major version",
         "labels": ["{{arg0}}"]
       },
       "pin": {
         "automerge": false,
+        "groupName": "test dependencies",
         "labels": ["{{arg0}}"]
       },
       "digest": {
         "automerge": false,
+        "groupName": "test dependencies",
         "labels": ["{{arg0}}"]
       },
       "lockFileMaintenance": {
         "automerge": false,
+        "groupName": "test dependencies",
         "labels": ["{{arg0}}"]
       },
       "rollback": {
         "automerge": false,
+        "groupName": "test dependencies",
         "labels": ["{{arg0}}"]
       },
       "bump": {
         "automerge": false,
+        "groupName": "test dependencies",
         "labels": ["{{arg0}}"]
       }
     }
