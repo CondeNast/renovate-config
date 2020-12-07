@@ -18,7 +18,6 @@
       },
       "major": {
         "automerge": false,
-        "groupName": "test dependencies major version",
         "labels": ["{{arg0}}"]
       },
       "pin": {

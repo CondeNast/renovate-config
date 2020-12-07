@@ -10,9 +10,6 @@
       "minor": {
         "groupName": "CI dependencies"
       },
-      "major": {
-        "groupName": "CI dependencies major version"
-      },
       "pin": {
         "groupName": "CI dependencies"
       },
