@@ -15,10 +15,6 @@
       "major": {
         "automerge": false,
         "labels": ["{{arg0}}"]
-      },
-      "bump": {
-        "automerge": false,
-        "labels": ["{{arg0}}"]
       }
     }
   ]

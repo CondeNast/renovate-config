@@ -27,14 +27,6 @@
       "lockFileMaintenance": {
         "automerge": false,
         "labels": ["{{arg0}}"]
-      },
-      "rollback": {
-        "automerge": false,
-        "labels": ["{{arg0}}"]
-      },
-      "bump": {
-        "automerge": false,
-        "labels": ["{{arg0}}"]
       }
     }
   ]
