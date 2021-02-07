@@ -3,7 +3,7 @@
   "packageRules": [
     {
       "extends": ["packages:eslint", "packages:stylelint"],
-      "packageNames": ["lint-staged", "prettier", "pretty-quick"],
+      "matchPackageNames": ["lint-staged", "prettier", "pretty-quick"],
       "minor": {
         "groupName": "linter packages"
       }

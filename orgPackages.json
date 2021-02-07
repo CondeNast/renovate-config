@@ -1,3 +1,3 @@
 {
-  "packagePatterns": ["^@condenast", "^@atjson"]
+  "matchPackagePatterns": ["^@condenast", "^@atjson"]
 }
