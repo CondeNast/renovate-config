@@ -34,16 +34,6 @@
         "automerge": false,
         "groupName": "test dependencies",
         "labels": ["{{arg0}}"]
-      },
-      "rollback": {
-        "automerge": false,
-        "groupName": "test dependencies",
-        "labels": ["{{arg0}}"]
-      },
-      "bump": {
-        "automerge": false,
-        "groupName": "test dependencies",
-        "labels": ["{{arg0}}"]
       }
     }
   ]

@@ -18,12 +18,6 @@
       },
       "lockFileMaintenance": {
         "groupName": "CI dependencies"
-      },
-      "rollback": {
-        "groupName": "CI dependencies"
-      },
-      "bump": {
-        "groupName": "CI dependencies"
       }
     }
   ]
